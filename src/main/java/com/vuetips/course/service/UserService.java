@@ -23,4 +23,8 @@ public class UserService {
 	public List<User> getUsers() {
 		return userRepository.findAll();
 	}
+	
+	public List<User> getClientes(String nome) {
+		return userRepository.getUsersByName(nome);
+	}
 }

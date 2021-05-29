@@ -31,4 +31,10 @@ public class UserResource {
 		
 		return ResponseEntity.ok().body(user);
 	}
+	
+	@GetMapping("/name/{name}")
+	public ResponseEntity<List<User>> findAllByName(@PathVariable String name) {
+		List<User> users = userService.getClientes(name);
+		return ResponseEntity.ok().body(users);
+	}
 }
